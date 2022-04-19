@@ -1,46 +1,92 @@
-# Getting Started with Create React App
+## Codigo Criado por Gustavo José
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Como instalar e usar o projeto (instruções)
+é necessario ter o [docker](https://www.docker.com/products/docker-desktop) instalador na maquina
+<p>clone repositório</p>
 
-## Available Scripts
+```sh
+git clone https://github.com/GustavoDev764/react-app-with-docker.git
+```
+entrar na pasta react-app-with-docker
+```sh
+cd react-app-with-docker
+```
 
-In the project directory, you can run:
+iniciar a aplicação
+```sh
+docker-compose up
+```
 
-### `npm start`
+Acessar o projeto
+[http://localhost:3000](http://localhost:3000)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Detalhes da aplicação
+Esta é uma aplicação [React](https://reactjs.org/) simple para avaliar o conhecimento do candidato para uma vaga de desenvolvedor frontend para [Trademaster Servicos e Participações S.A.](https://www.trademaster.com.br/) 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## TODO
+[PR](https://docs.github.com/pt/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) é a melhor maneira de propor alterações na base de código (usamos o [Github Flow](https://guides.github.com/introduction/flow/index.html)). Acolhemos e analisamos ativamente suas requisições:
 
-### `npm test`
+1. Faça o fork do repo e crie seu branch a partir do principal.
+2. Se você adicionou um código que deve ser testado, adicione testes.
+3. Se você mudou APIs, atualize a documentação.
+4. Certifique-se de que o conjunto de testes seja aprovado.
+5. Certifique-se de que seu código seja executado.
+6. Emita essa solicitação pull!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Requisitos
 
-### `npm run build`
+Devem ser criadas 3 telas:
+- Login
+- Home
+- Ajuda
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O backend para este teste está pronto e encontra-se no diretório `backend`. Este, quando executado, gera um serviço web com as seguintes rotas:
+ - _/login?user={email}&password={senha}_
+ - _/ajuda_ 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para fins de login, deve ser utilizado qualquer e-mail no campo `user`, desde que o mesmo possua sufixo `@trademaster.com.br`.
 
-### `npm run eject`
+A senha a ser utilizada deve ser a data atual no formato `YYYYMMDD`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```json
+{
+    "UserName": "admin",
+    "Name": "Administrador do Sistema"
+}
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Login
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+A tela de login deve apresentar dois campos:
+- _Usuário:_ Campo `text` com no __mínimo__ `64 Bits` e no __máximo__ `128 Bits`.  
+- _Senha:_ Campo `password` com no __mínimo__ `32 Bits` __máximo__ `64 Bits` caracteres.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![login](https://github.com/trademasterbr/test-react/raw/main/wireframe/login.png)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+__Validation__
+- _Usuário:_  O valor preenhido deve ser um `email`  
+- _Senha:_ O campo deve ser preenchido
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+__Action__
+
+Caso de Sucesso, o usuário deve ser direcionado a tela de Home do usuário
+
+Em caso de Erro, deve ser mostrado na tela do usuáro uma mensagem contendo o seguinte conteúdo:
+- `Acesso Negado, Verifique se o usuário e senha condizem com credenciais válidas.`
+
+### Ajuda
+
+A tela deve ter como título a palavara `Ajuda` e um texto explicativo provindo de um serviço do backend.
+
+![ajuda](https://github.com/trademasterbr/test-react/raw/main/wireframe/ajuda.png)
+
+### Home
+
+A tela deve ter como título a palavara `Gerar Arvore AVL` e o corpo dividido entre duas partes; A primeira contemplando um campo `inteiro` com no __máximo__ `4 carcteres` e uma área que mostrará a árvore a ser criada.
+
+O objetivo desta tela é desenhar uma [Árvore AVL](http://dcm.ffclrp.usp.br/~augusto/teaching/aedi/AED-I-Arvores-AVL.pdf) na tela contendo exatos numeros de nós imputados no campo intero em questão.
+
+![home](https://github.com/trademasterbr/test-react/raw/main/wireframe/home.png)
