@@ -36,13 +36,13 @@ Esta é uma aplicação [React](https://reactjs.org/) simple para avaliar o conh
 ## Requisitos
 
 Devem ser criadas 3 telas:
-- Login
-- Home
-- Ajuda
+- :heavy_check_mark: Login 
+- :x: Home
+- :heavy_check_mark: Ajuda
 
 ### Backend
 
-O backend para este teste está pronto e encontra-se no diretório `backend`. Este, quando executado, gera um serviço web com as seguintes rotas:
+:heavy_check_mark: O backend para este teste está pronto e encontra-se no diretório `backend`. Este, quando executado, gera um serviço web com as seguintes rotas:
  - _/login?user={email}&password={senha}_
  - _/ajuda_ 
 
@@ -59,7 +59,7 @@ A senha a ser utilizada deve ser a data atual no formato `YYYYMMDD`.
 
 ### Login
 
-A tela de login deve apresentar dois campos:
+:heavy_check_mark: A tela de login deve apresentar dois campos:
 - _Usuário:_ Campo `text` com no __mínimo__ `64 Bits` e no __máximo__ `128 Bits`.  
 - _Senha:_ Campo `password` com no __mínimo__ `32 Bits` __máximo__ `64 Bits` caracteres.
 
@@ -72,20 +72,20 @@ __Validation__
 
 __Action__
 
-Caso de Sucesso, o usuário deve ser direcionado a tela de Home do usuário
+:heavy_check_mark: Caso de Sucesso, o usuário deve ser direcionado a tela de Home do usuário
 
-Em caso de Erro, deve ser mostrado na tela do usuáro uma mensagem contendo o seguinte conteúdo:
+:heavy_check_mark: Em caso de Erro, deve ser mostrado na tela do usuáro uma mensagem contendo o seguinte conteúdo:
 - `Acesso Negado, Verifique se o usuário e senha condizem com credenciais válidas.`
 
 ### Ajuda
 
-A tela deve ter como título a palavara `Ajuda` e um texto explicativo provindo de um serviço do backend.
+:heavy_check_mark: A tela deve ter como título a palavara `Ajuda` e um texto explicativo provindo de um serviço do backend.
 
 ![ajuda](https://github.com/trademasterbr/test-react/raw/main/wireframe/ajuda.png)
 
 ### Home
 
-A tela deve ter como título a palavara `Gerar Arvore AVL` e o corpo dividido entre duas partes; A primeira contemplando um campo `inteiro` com no __máximo__ `4 carcteres` e uma área que mostrará a árvore a ser criada.
+:x: A tela deve ter como título a palavara `Gerar Arvore AVL` e o corpo dividido entre duas partes; A primeira contemplando um campo `inteiro` com no __máximo__ `4 carcteres` e uma área que mostrará a árvore a ser criada.
 
 O objetivo desta tela é desenhar uma [Árvore AVL](http://dcm.ffclrp.usp.br/~augusto/teaching/aedi/AED-I-Arvores-AVL.pdf) na tela contendo exatos numeros de nós imputados no campo intero em questão.
 
