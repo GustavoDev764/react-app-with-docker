@@ -1,5 +1,5 @@
 import axios from 'axios';
-import serve from '../serveconfig.json';
+import serve from '../../serveconfig.json';
 
 export const url = serve.url;
 

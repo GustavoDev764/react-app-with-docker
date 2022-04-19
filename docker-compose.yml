@@ -2,13 +2,13 @@ version: "3.9"
 
 services:
   frontend:
-    container_name: next_frontend
+    container_name: app_frontend
     build: .
     ports:
     - "3000:3000"
  
   backend:
-    container_name: next_backend
+    container_name: app_backend
     build: 
       context: ./
       dockerfile: ./backend/Dockerfile
